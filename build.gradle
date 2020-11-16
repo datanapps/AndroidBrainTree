@@ -21,8 +21,8 @@ allprojects {
         maven {
             url "https://cardinalcommerce.bintray.com/android"
             credentials {
-                username 'Letslitapp'
-                password 'Letslit1234'
+                username 'username'
+                password 'password'
             }
         }
     }

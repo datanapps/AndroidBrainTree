@@ -47,7 +47,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 /*
  *
- * LETSLITAPP@gmail.com PASSWORD: LETSLITapp12
+ *
  * */
 public class BrainTreeActivity extends AppCompatActivity {
 
@@ -55,7 +55,7 @@ public class BrainTreeActivity extends AppCompatActivity {
     private TextView tvPaymentResponse;
 
 
-    private TextView tvRefundResponse;  //8214fcb3-4dd1-094a-6d3f-e2d0930a5dfb
+    private TextView tvRefundResponse;
 
     private String AUTHORIZATION = "sandbox_mfmx8jzt_hv6ctxpsdbr73qtx";
 
@@ -188,7 +188,6 @@ public class BrainTreeActivity extends AppCompatActivity {
                 CustomerRequest request = new CustomerRequest()
                         .firstName("Mark")
                         .lastName("Jones")
-
                         .email("mark.jones@example.com");
 
                 Result<Customer> result = gateway.customer().create(request);

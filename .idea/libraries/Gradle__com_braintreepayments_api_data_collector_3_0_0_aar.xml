@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: com.braintreepayments.api:data-collector:3.0.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2c4e48de6f4653d1ebb91e6bbe6e5f42/jetified-data-collector-3.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2c4e48de6f4653d1ebb91e6bbe6e5f42/jetified-data-collector-3.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2c4e48de6f4653d1ebb91e6bbe6e5f42/jetified-data-collector-3.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2c4e48de6f4653d1ebb91e6bbe6e5f42/jetified-data-collector-3.0.0/jars/libs/kount-data-collector-3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.braintreepayments.api/data-collector/3.0.0/98f988c3a3b9f9ccdd0982dc14f078748786eec7/data-collector-3.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.braintreepayments.api/data-collector/3.0.0/98f988c3a3b9f9ccdd0982dc14f078748786eec7/data-collector-3.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

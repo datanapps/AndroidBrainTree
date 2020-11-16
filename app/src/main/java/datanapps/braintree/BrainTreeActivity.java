@@ -57,20 +57,11 @@ public class BrainTreeActivity extends AppCompatActivity {
 
     private TextView tvRefundResponse;
 
-    private String AUTHORIZATION = "sandbox_mfmx8jzt_hv6ctxpsdbr73qtx";
-
-    private String MERCHANT_ID = "hv6ctxpsdbr73qtx";
-
-    private String PUBLIC_KEY = "hvw7sd9536cbmzvf";
-
-    private String PRIVATE_KEY = "sandbox_mfmx8jzt_hv6ctxpsdbr73qtx";
 
     int REQUEST_CODE = 100;
 
     String amount = "100";
     private String clientToken;
-
-    public static String key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"; // why using 44 byte
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -98,73 +89,11 @@ public class BrainTreeActivity extends AppCompatActivity {
             }
         });
 
-        //createClientToken();
-        String temp = encrypt("ahcs");
+        createClientToken();
+        //String temp = encrypt("ahcs");
 
-        Log.d("asd", "ENCRYPT ---------- : "+temp);
+        //Log.d("asd", "ENCRYPT ---------- : "+temp);
     }
-
-
-
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public static String encrypt(String strToEncrypt) {
-
-        try {
-            byte[] iv = {1, 2, 3, 4, 5, 6, 6, 5, 4, 3, 2, 1, 7, 7, 7, 7};
-            IvParameterSpec ivspec = new IvParameterSpec(iv);
-
-            byte[] key_Array = Base64.getDecoder().decode(key);
-            key_Array = Arrays.copyOf(key_Array, 32); // Don't understand the purpose of this
-
-            Key SecretKey = new SecretKeySpec(key_Array, "AES");
-
-            Cipher _Cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
-            _Cipher.init(Cipher.ENCRYPT_MODE, SecretKey, ivspec);
-
-            return Base64.getEncoder().encodeToString(_Cipher.doFinal(strToEncrypt.getBytes()));
-        }catch (Exception e){
-            e.fillInStackTrace();
-        }
-
-        return null;
-    }
-
-
-   /* public String HHUserAuthentication(String userName1, String password1)
-    {
-        String token = "";
-
-        try
-        {
-            String username = Decrypt(userName1);
-            String password = Decrypt(password1);
-
-            boolean result = Membership.ValidateUser(username, password);
-
-            if (result)
-            {
-                String build = UCA.Common.Utility.GetValue.getSQLValue("Select CONCAT(UserId,'//',LastActivityDate) as token FROM aspnet_Users WHERE UserName = '" + username + "'");
-                String userid = UCA.Common.Utility.GetValue.getSQLValue("SELECT Users_ID FROM Users WHERE User_Name = '" + username + "'");
-                token = sctt.utility.DESCrypt.Encrypt(build);
-                token = userid + "UID" + token;
-            }
-        }
-        catch (Exception en)
-        {
-            ITS_Log.ITS_Log.writeToExLogFile("HHUserAuthentication: " + en.ToString());
-            throw en;
-        }
-
-        return token;
-    }*/
-
-
-
-
-
-
-
 
 
     private void createClientToken(){
@@ -197,11 +126,9 @@ public class BrainTreeActivity extends AppCompatActivity {
 
                 String aCustomerId = result.getTarget().getId();
 
-                System.out.println("******aCustomerId :: "+aCustomerId);
-
                 ClientTokenRequest clientTokenRequest = new ClientTokenRequest()
-                        .customerId(aCustomerId)
-                        .merchantAccountId("letslit-CAD");
+                        .customerId(aCustomerId);
+                        //.merchantAccountId("datanapps-CAD");
                 clientToken = gateway.clientToken().generate(clientTokenRequest);
                 System.out.println("******clientToken* :: "+clientToken);
 
@@ -317,7 +244,7 @@ public class BrainTreeActivity extends AppCompatActivity {
 
                     TransactionRequest request = new TransactionRequest()
                             .amount(new BigDecimal(amount))
-                            //.merchantAccountId("letslit-CAD")
+                            //.merchantAccountId("datanapps-CAD")
                             .paymentMethodNonce(nonceFromTheClient)
                             .deviceData(deviceDataFromTheClient)
                             .options()

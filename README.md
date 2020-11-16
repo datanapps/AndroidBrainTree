@@ -157,7 +157,7 @@ private void createClientToken(){
     
     
     
-    <img src="https://datanapps.com/public/dnarestapi/naughty_smile.jpg" height="200" width="300">
+<img src="https://datanapps.com/public/dnarestapi/naughty_smile.jpg" height="200" width="300">
  
  
  [![See](https://datanapps.com/public/dnarestapi/buy/buy_coffee2.png)](https://www.paypal.me/datanappspaynow)
